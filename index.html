@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Burguer-A melhor pizzaria e Hamburgueria da cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css">
+
+
+
+
+</head>
+<body>
+    <header>
+
+        <div class="cabeçalho">
+            <h1>WORLD OF PIZZA</h1>
+            <h2 class="subtitulo">Os sabores do mundo em uma única fatia</h2>
+            <div class="links">
+                <a href="https://www.google.com/maps?q=Rua+São+José,+Campestre+do+Maranhão" target="blank">
+                    <span class="material-symbols-outlined">
+                        pin_drop
+                        </span>
+                    Endereço
+                </a>
+                <a href="#" onclick="openModal()">
+                    <span class="material-symbols-outlined">
+                        call
+                        </span>
+                    Fale conosco
+                </a>
+                
+            <div id="date-span">
+                <span class="material-symbols-outlined">
+                    history
+                    </span>
+
+                <span id="date">Terça-Domingo 18:00 as 23:00 </span>
+            </div>
+            </div>
+            
+
+        </div>
+
+    </header>
+
+    <!--Modal suspenso de contato-->
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+    <div class="modal" id="modal">
+        <h3>Entre em Contato</h3>
+        <p>Telefone:<strong>(99)98475-3745</strong></p>
+        <a class="whatsapp-btn"  href="https://wa.me/5599984753745" target="_blank">
+            <i class="fi fi-brands-whatsapp"></i>
+
+        </a>
+        <br>
+        <button class="close-btn" onclick="closeModal()"> FECHAR </button>
+    </div>
+
+    <div class="slider-container">
+        <div class="slide">
+          <div class="slide-content">
+            <p class="text-slider">Feita com <br>carinho, servida com sabor!</p>
+            <img src="imagens/slide1.png" alt="" class="img-slider">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <p class="text-slider">Somos o delivery <br>mais ráido da Região!</p>
+            <img src="imagens/slide2.png" alt="" class="img-slider">
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <p class="text-slider">Pizza ou hambúrguer,você escolhe!</p>
+            <img src="imagens/slide3.png" alt="" class="img-slider" >
+            
+          </div>
+        </div>
+      </div>
+
+    <h2 class="title-menu">CONHEÇA NOSSO MENU</h2>
+    <div>
+        <button id="cart-btn">
+            <span class="delivery">Delivery</span>
+            <span id="cart-count">0</span>
+            <span class="material-symbols-outlined" id="cart">
+                shopping_cart
+                </span>
+
+        </button>
+    </div>
+
+    <div id="cart-modal">
+        <div id="cart-modal-item">
+            <h2 id="cart-modal-title">Meu carrinho</h2>
+            <div id="cart-item">
+                 <div id="cart-items-container"></div>
+                <p class="itemns-total">Total: <span id="cart-total"></span></p>
+                <p id="endereço">Endereço de entrega:</p>
+                <input type="text" name="" id="adderess" placeholder="Adicione o seu endereço completo">
+                <p id="adderess-warn" >Digite um endereço válido</p>
+                <div id="button-modal">
+                    <button id="close-modal-btn">Fechar</button>
+                    <button id="checkout-btn">Finalizar pedido</button>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <div id="menu">
+        <main>
+         <div class="itemns">
+             <img src="imagens/pizza-calabresa.png"
+             alt="Pizza de calabresa" 
+             class="img-itemns">
+             <div id="descrição">
+               <p id="product">Pizza de calabresa</p>
+               <p class="descrição-produto">Recheada com molho de T, <br>queijo e calabresa.</p>
+
+               <div class="escolha">
+                <label for="tamanho-1">Tamanho:</label>
+                <select id="tamanho-1" name="tamanho">
+                  <option value="pequena" data-price="36.00">Pequena (20 cm) - R$ 36,00</option>
+                  <option value="media" data-price="42.00">Média (30 cm) - R$ 42,00</option>
+                  <option value="grande" data-price="48.00">Grande (40 cm) - R$ 48,00</option>
+                </select>
+               </div>
+               
+           
+            <div id="valor">
+                <p id="preco-atual">R$: <span id="preco-dinamico-1">36.00</span></p>
+            <button class="add-to-cart-btn" data-name="Pizza de calabresa com queijo"  >
+                    <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                        </span>
+             </button>
+                    </div>
+                 </div>
+            </div>
+
+     <div class="itemns">
+        <img src="imagens/pizza-carnedesol.png"
+        alt="Pizza de carne de sol" 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Pizza de carne de sol</p>
+            <p class="descrição-produto">Uma combinação de carne de sol com catupiry.</p>
+
+            <div class="escolha">
+                <label for="tamanho-2"> Tamanho:</label>
+                <select id="tamanho-2" name="tamanho">
+                  <option value="pequena" data-price="38.00">Pequena (20 cm) - R$ 38,00</option>
+                  <option value="media" data-price="42.00">Média (30 cm) - R$ 42,00</option>
+                  <option value="grande" data-price="48.00">Grande (40 cm) - R$ 48,00</option>
+                </select>
+            </div>
+            
+
+        <div id="valor">
+            <p id="preco-atual">R$: <span id="preco-dinamico-2">38.00</span></p>
+            <button class="add-to-cart-btn" data-name="Pizza de carne de sol">
+                <span class="material-symbols-outlined" id="icon">
+                       shopping_cart
+                     </span>
+            </button>
+                   </div>
+                </div>
+          </div>
+
+        <div class="itemns">
+            <img src="imagens/pizza-3queijos.png"
+            alt="Pizza 3 queijo" 
+            class="img-itemns">
+               <div id="descrição">
+                    <p id="product">Pizza 3 queijo</p>
+                    <p class="descrição-produto">Uma massa suave com deliciosas fatias de queijo.</p>
+
+                    <div class="escolha">
+                        <label for="tamanho-3">Tamanho:</label>
+               <select id="tamanho-3" name="tamanho">
+                 <option value="pequena" data-price="33.00">Pequena (20 cm) - R$ 33,00</option>
+                 <option value="media" data-price="42.00">Média (30 cm) - R$ 42,00</option>
+                 <option value="grande" data-price="48.00">Grande (40 cm) - R$ 48,00</option>
+               </select>
+                    </div>
+              
+                    <div id="valor">
+                        <p id="preco-atual">R$: <span id="preco-dinamico-3">33.00</span></p>
+                        <button class="add-to-cart-btn" data-name="Pizza 3 queijo">
+                            <span class="material-symbols-outlined" id="icon">
+                                shopping_cart
+                                </span>
+                        </button>
+                       </div>
+                  </div>
+             </div>
+
+     <div class="itemns">
+         <img src="imagens/pizza-frango.png"
+        alt="Pizza de frango " 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Pizza de frango </p>
+            <p class="descrição-produto">Contém ua camada de molho, <br>frango e catupiry.</p>
+
+            <div class="escolha">
+                <label for="tamanho-4">Tamanho:</label>
+            <select id="tamanho-4" name="tamanho">
+              <option value="pequena" data-price="33.00">Pequena (20 cm) - R$ 33,00</option>
+              <option value="media" data-price="40.00">Média (30 cm) - R$ 40,00</option>
+              <option value="grande" data-price="48.00">Grande (40 cm) - R$ 48,00</option>
+            </select> 
+            </div>
+            
+
+             <div id="valor">
+                <p id="preco-atual">R$: <span id="preco-dinamico-4">33.00</span></p>
+                 <button class="add-to-cart-btn" data-name="Pizza de frango ">
+                     <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                        </span>
+                 </button>
+                </div>
+            </div>
+      </div>
+
+      <div class="itemns">
+        <img src="imagens/pizza-presunto.png"
+       alt="Pizza de Presunto" 
+       class="img-itemns">
+       <div id="descrição">
+           <p id="product">Pizza de Presunto</p>
+           <p class="descrição-produto">Contém um recheio de queijo,<br> presunto,ovo e cebola.</p>
+
+           <div class="escolha">
+            <label for="tamanho-4">Tamanho:</label>
+            <select id="tamanho-4" name="tamanho">
+              <option value="pequena" data-price="30.00">Pequena (20 cm) - R$ 30,00</option>
+              <option value="media" data-price="41.00">Média (30 cm) - R$ 41,00</option>
+              <option value="grande" data-price="47.00">Grande (40 cm) - R$ 47,00</option>
+            </select> 
+           </div>
+           
+
+            <div id="valor">
+               <p id="preco-atual">R$: <span id="preco-dinamico-5">30.00</span></p>
+                <button class="add-to-cart-btn" data-name="Pizza de Presunto">
+                    <span class="material-symbols-outlined" id="icon">
+                       shopping_cart
+                       </span>
+                </button>
+               </div>
+           </div>
+     </div>
+
+     <div class="itemns">
+        <img src="imagens/pizza-margherita.png"
+       alt="Pizza de margherita" 
+       class="img-itemns">
+       <div id="descrição">
+           <p id="product">Pizza de margherita</p>
+           <p class="descrição-produto">Contém como recheio de molho de T, queijo e majericão.</p>
+
+           <div class="escolha">
+            <label for="tamanho-4">Tamanho:</label>
+            <select id="tamanho-4" name="tamanho">
+              <option value="pequena" data-price="35.00">Pequena (20 cm) - R$ 35,00</option>
+              <option value="media" data-price="43.00">Média (30 cm) - R$ 43,00</option>
+              <option value="grande" data-price="48.00">Grande (40 cm) - R$ 48,00</option>
+            </select>
+           </div>
+           
+
+            <div id="valor">
+               <p id="preco-atual">R$: <span id="preco-dinamico-6">32.00</span></p>
+                <button class="add-to-cart-btn" data-name="Pizza de margherita">
+                    <span class="material-symbols-outlined" id="icon">
+                       shopping_cart
+                       </span>
+                </button>
+               </div>
+           </div>
+     </div>
+
+    <div class="itemns">
+        <img src="imagens/Hamburguer-bacon.png"
+        alt="Hambúrguer Bacon" 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Hambúrguer Bacon</p>
+            <p class="descrição-produto">Recheado com carne de boi, <br>bacon e queijo cheddar.</p>
+            <div id="valor">
+                <p id="preço">R$:24.50</p>
+                <button class="add-to-cart-btn" data-name="Hambúrguer Bacon" data-price="24.50">
+                    <span class="material-symbols-outlined" id="icon">
+                         shopping_cart
+                         </span>
+                </button>
+                 </div>
+            </div>
+        </div>
+
+    <div class="itemns">
+        <img src="imagens/Hamburguer-BBQ.png"
+        alt="Hambúrguer BBQ" 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Hambúrguer BBQ</p>
+            <p class="descrição-produto">Recheado com carne de boi,<br> picles e molho BBQ</p>
+            <div id="valor">
+              <p id="preço">R$:23.90</p>
+              <button class="add-to-cart-btn" data-name="Hambúrguer BBQ" data-price="23.90">
+                 <span class="material-symbols-outlined" id="icon">
+                     shopping_cart
+                     </span>
+             </button>
+            </div>
+        </div>
+     </div>
+
+    <div class="itemns">
+        <img src="imagens/Hamburguer-italiano.png"
+        alt="Hambúrguer italiano" 
+        class="img-itemns">
+       <div id="descrição">
+            <p id="product">Hambúrguer italiano</p>
+            <p class="descrição-produto">Recheado com carne de boi, <br> queijo mozzarella derretido.</p>
+           <div id="valor">
+               <p id="preço">R$:24.00</p>
+             <button class="add-to-cart-btn" data-name="Hambúrguer italiano" data-price="24.00">
+              <span class="material-symbols-outlined" id="icon">
+                   shopping_cart
+                </span>
+             </button>
+             </div>
+        </div>
+     </div>
+
+    <div class="itemns">
+        <img src="imagens/Hamburguer-jalapeño.png"
+        alt="Hambúrguer Jalapeños" 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Hambúrguer Jalapeños</p>
+            <p class="descrição-produto">Recheado com carne de boi, <br> queijo cheddar e Jalapeños picantes.</p>
+            <div id="valor">
+                <p id="preço">R$:24.90</p>
+                     <button class="add-to-cart-btn" data-name="Hambúrguer Jalapeños" data-price="24.90">
+                            <span class="material-symbols-outlined" id="icon">
+                                     shopping_cart
+                                </span>
+                     </button>
+                     </div>
+                     </div>
+                 </div>    
+                 
+     <div class="itemns">
+      <img src="imagens/Hamburguer-português.png"
+      alt="Hambúrguer Português" 
+      class="img-itemns">
+       <div id="descrição">
+        <p id="product">Hambúrguer Português</p>
+        <p class="descrição-produto">Recheado com carne de boi, catupiry,presunto defumado.</p>
+           <div id="valor">
+             <p id="preço">R$:26.90</p>
+              <button class="add-to-cart-btn" data-name="Hambúrguer Português" data-price="26.90">
+                  <span class="material-symbols-outlined" id="icon">
+                         shopping_cart
+                   </span>
+             </button>
+         </div>
+      </div>
+    </div>     
+                             
+   <div class="itemns">
+    <img src="imagens/Hamburger-BBQBacon.png"
+    alt="Hambúrguer BBQ Bacon" 
+    class="img-itemns">
+    <div id="descrição">
+     <p id="product">Hambúrguer BBQ Bacon</p>
+     <p class="descrição-produto">Recheado com bacon defumado, queijo cheddar e molho BBQ.</p>
+          <div id="valor">
+         <p id="preço">R$:25.90</p>
+        <button class="add-to-cart-btn" data-name="Hambúrguer BBQ Bacon" data-price="25.90">
+            <span class="material-symbols-outlined" id="icon">
+                 shopping_cart
+            </span>
+        </button>
+       </div>
+    </div>
+ </div>        
+
+     <div>
+        <div id="bebidas"></div>
+         <h2 class="title-bebidas">BEBIDAS</h2>
+
+ <div id="cart-bebidas">
+    <div class="itemns">
+    <img src="imagens/cocaLata.png" 
+    alt="Coca-cola lata 300ml"
+    class="img-itemns">
+     <div id="descrição">
+     <p id="product">Coca-cola lata 300ml</p>
+    <div id="valor">
+      <p id="preço">R$:6.00</p>
+     <button class="add-to-cart-btn" data-name="Coca-cola lata 300ml" data-price="6.00">
+         <span class="material-symbols-outlined" id="icon">
+                shopping_cart
+          </span>
+     </button>
+        </div>
+     </div>
+</div>
+<div class="itemns">
+<img src="imagens/FantaLata.png"
+ alt="Fanta Laranja lata 300ml" 
+class="img-itemns">
+ <div id="descrição">
+    <p id="product">Fanta Laranja lata 300ml</p>
+    <div id="valor">
+        <p id="preço">R$:6.00</p>
+         <button class="add-to-cart-btn" data-name="Fanta Laranja lata 300ml" data-price="6.00">
+                <span class="material-symbols-outlined" id="icon">
+                                shopping_cart
+                </span>
+          </button>
+                </div>
+            </div>
+      </div>
+  <div class="itemns">
+  <img src="imagens/GuaranáLata.png"
+  alt="Guaraná Lata 300ml" 
+  class="img-itemns">
+     <div id="descrição">
+        <p id="product">Guaraná lata 300ml</p>
+        <div id="valor">
+        <p id="preço">R$:5.00</p>
+        <button class="add-to-cart-btn" data-name="Guaraná lata 300ml" data-price="5.00">
+         <span class="material-symbols-outlined" id="icon">
+                shopping_cart
+            </span>
+        </button>
+             </div>
+        </div>
+  </div>
+             <div class="itemns">
+                <img src="imagens/Coca-2L.png"
+                alt="Coca-cola 2L" 
+                class="img-itemns">
+                <div id="descrição">
+                    <p id="product">Coca-cola 2L</p>
+                      <div id="valor">
+                         <p id="preço">R$:12.00</p>
+                         <button class="add-to-cart-btn" data-name="Coca-cola 2L" data-price="12.00">
+                            <span class="material-symbols-outlined" id="icon">
+                                    shopping_cart
+                                 </span>
+                         </button>
+                     </div>
+                </div>
+         </div>
+         <div class="itemns">
+            <img src="imagens/FantaLaranja-2L.png"
+            alt="Fanta Laranja 2L" 
+            class="img-itemns">
+            <div id="descrição">
+                <p id="product">Fanta Laranja 2L</p>
+                  <div id="valor">
+                     <p id="preço">R$:11.00</p>
+                     <button class="add-to-cart-btn" data-name="Fanta Laranja 2L" data-price="11.00">
+                        <span class="material-symbols-outlined" id="icon">
+                                shopping_cart
+                             </span>
+                     </button>
+                 </div>
+            </div>
+     </div>
+
+     <div class="itemns">
+        <img src="imagens/FantaUva-2L.png"
+        alt="Fanta uva 2L" 
+        class="img-itemns">
+        <div id="descrição">
+            <p id="product">Fanta uva 2L</p>
+              <div id="valor">
+                 <p id="preço">R$:10.00</p>
+                 <button class="add-to-cart-btn" data-name="Fanta uva 2L" data-price="10.00">
+                    <span class="material-symbols-outlined" id="icon">
+                            shopping_cart
+                         </span>
+                 </button>
+             </div>
+        </div>
+ </div>
+
+ <div class="itemns">
+    <img src="imagens/SucoLaranja-300ml.png"
+    alt="Suco de Laranja 300" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de laranja 300ml</p>
+          <div id="valor">
+             <p id="preço">R$:7.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de laranja 300ml" data-price="7.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+<div class="itemns">
+    <img src="imagens/SucoAcerola-300ml.png"
+    alt="Suco de acerola 300ml" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de acerola 300ml</p>
+          <div id="valor">
+             <p id="preço">R$:6.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de acerola 300ml" data-price="6.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+
+<div class="itemns">
+    <img src="imagens/SucoMaracujá-300ml.png"
+    alt="Suco de Maracujá 300ml" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de Maracujá 300ml</p>
+          <div id="valor">
+             <p id="preço">R$:8.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de Maracujá 300ml" data-price="8.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+
+<div class="itemns">
+    <img src="imagens/SucoLaranja-1L.png"
+    alt="Suco de Laranja 1L" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de Laranja 1L</p>
+          <div id="valor">
+             <p id="preço">R$:13.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de Laranja 1L" data-price="13.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+
+<div class="itemns">
+    <img src="imagens/JarraSucoAcerola-1L.png"
+    alt="Suco de acerola 1L" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de acerola 1L</p>
+          <div id="valor">
+             <p id="preço">R$:12.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de acerola 1L" data-price="12.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+
+<div class="itemns">
+    <img src="imagens/sucoMaracujá-1L.png"
+    alt="Suco de Maracujá 1L" 
+    class="img-itemns">
+    <div id="descrição">
+        <p id="product">Suco de Maracujá 1L</p>
+          <div id="valor">
+             <p id="preço">R$:18.00</p>
+             <button class="add-to-cart-btn" data-name="Suco de Maracujá 1L" data-price="18.00">
+                <span class="material-symbols-outlined" id="icon">
+                        shopping_cart
+                     </span>
+             </button>
+         </div>
+    </div>
+</div>
+                 
+       </div>
+    </div>
+</div>
+
+
+       
+        
+    <script src="script.js"></script>
+    
+</body>
+</html>
